@@ -33,6 +33,7 @@
                             <th scope="col">Contenuto</th>
                             <th scope="col">Nome</th>
                             <th scope="col">Tipo</th>
+                            <th scope="col">Tecnologia</th>
                             <th scope="col" class="text-center">Azioni</th>
                           </tr>
                         </thead>
@@ -44,6 +45,14 @@
                               <td><p class="fw-semibold">{{$project['content']}}</p></td>
                               <td><p class="fw-semibold">{{$project['slug']}}</p></td>
                               <td><p class="fw-semibold">{{$project->type ? $project->type->name : 'Senza Tipo'}}</p></td>
+                              <td>  
+                                    @forelse ($project->technologies as $technology)
+                                    <p class="fw-semibold">{{$technology->name}}</p>
+                                    @empty
+                                    <p class="fw-semibold" >Nessuna Tecnologia</p>
+                                    @endforelse
+                            </td>
+                            
                               <td>
                                 <div class="d-flex">
                                     <a href="{{route('admin.projects.show', $project->slug)}}" class="btn btn-square btn-sm btn-info m-1" title="Ispeziona"><i class="fa fa-eye" ></i></a>

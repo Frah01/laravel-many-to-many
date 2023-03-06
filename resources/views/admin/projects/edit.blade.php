@@ -48,7 +48,7 @@
                                 </select>
                             </div>
                             <div class="form-group my-3">
-                                <div class="control-label">Technologies</div>
+                                <div class="control-label"><p class="fw-semibold mt-1">Technologies</p></div>
                                 @foreach($technologies as $technology)
                                 <div class="form-check @error('technologies') is-invalid @enderror">
                                     @if($errors->any())
