@@ -24,6 +24,14 @@
                         <h4 class="p-2 fw-semibold">Tipo:</h4> 
                         <p class="p-2 fw-semibold">{{$project->type ? $project->type->name : 'Senza Tipo'}}</p>
                     </div>
+                    <div>
+                        <h4 class="p-2 fw-semibold">Technologies:</h4>
+                            @forelse($project->technologies as $technology)
+                            <p class="p-2 fw-semibold">{{$technology->name}}</p>
+                            @empty
+                            <p class="p-2 fw-semibold">Nessuna Tecnologia Associato al Project</p>
+                            @endforelse
+                    </div>
                 </div>
             </div> 
         </div>
