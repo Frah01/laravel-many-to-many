@@ -27,7 +27,8 @@ class UpdateProjectRequest extends FormRequest
         return [
             'title' => ['required', Rule::unique('projects')->ignore($this->post), 'max:200'],
             'content' => ['nullable'],
-            'type_id' => ['nullable', 'exists:types,id']
+            'type_id' => ['nullable', 'exists:types,id'],
+            'technologies' => ['exists:technologies,id'],
         ];
     }
     /**
@@ -40,6 +41,7 @@ class UpdateProjectRequest extends FormRequest
         return [
             'title.required' => 'Il titolo è richiesto',
             'title.unique' => 'Il titolo deve essere univoco',
+            'technologies' => 'Tag seleionato non valido'
         ];
     }
 }
