@@ -13,7 +13,7 @@ class StoreTechnologyRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,14 @@ class StoreTechnologyRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => ['required', 'unique:types', 'max:50'],
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'name.required' => 'Il titolo è richiesto',
+            'name.unique' => 'Il titolo deve essere univoco',
         ];
     }
 }

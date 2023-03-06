@@ -25,7 +25,7 @@ class UpdateProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => ['required', Rule::unique('projects')->ignore($this->post), 'max:200'],
+            'title' => ['required', Rule::unique('projects')->ignore($this->project), 'max:200'],
             'content' => ['nullable'],
             'type_id' => ['nullable', 'exists:types,id'],
             'technologies' => ['exists:technologies,id'],
@@ -41,7 +41,8 @@ class UpdateProjectRequest extends FormRequest
         return [
             'title.required' => 'Il titolo è richiesto',
             'title.unique' => 'Il titolo deve essere univoco',
-            'technologies' => 'Tag seleionato non valido'
+            'technologies' => 'Tecnologia selezionata non valida',
+            'technologies.unique' => 'La tecnologia deve essere univoca'
         ];
     }
 }

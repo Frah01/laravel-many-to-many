@@ -27,7 +27,7 @@ class StoreProjectRequest extends FormRequest
             'title' => ['required', 'unique:projects', 'max:200'],
             'content' => ['nullable'],
             'type_id' => ['nullable', 'exists:types,id'],
-            'tags' => ['exists:tags,id'],
+            'technologies' => ['exists:technologies,id'],
         ];
     }
 
@@ -41,7 +41,7 @@ class StoreProjectRequest extends FormRequest
         return [
             'title.required' => 'Il titolo è richiesto',
             'title.unique' => 'Il titolo deve essere univoco',
-            'tags.exists' => 'Tag selezionato non valido',
+            'technologies.exists' => 'Tecnologia selezionata non valida',
         ];
     }
 }
