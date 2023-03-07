@@ -14,11 +14,11 @@
                 <div class="mt-3 mx-2">
                     <div>
                         <h4 class="p-2">Nome:</h4>
-                        <p class="p-2 text-uppercase fw-semibold">{{$technology['name']}}</p>
+                        <p class="m-0 p-2 text-uppercase fw-semibold">{{$technology['name']}}</p>
                     </div>
                     <div>
                         <h4 class="p-2 fw-semibold">Slug:</h4> 
-                        <p class="p-2 fw-semibold">{{$technology['slug']}}</p>  
+                        <p class="m-0 p-2 fw-semibold">{{$technology['slug']}}</p>  
                     </div>
                 </div>
             </div> 

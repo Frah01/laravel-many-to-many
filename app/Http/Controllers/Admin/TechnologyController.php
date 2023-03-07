@@ -83,7 +83,7 @@ class TechnologyController extends Controller
         $slug = Technology::generateSlug($request->name, '-');
         $form_data['slug'] = $slug;
         $technology->update($form_data);
-        return redirect()->route('admin.technologies.index')->with('message', 'Tipologia modificata correttamente');
+        return redirect()->route('admin.technologies.index')->with('message', 'Tecnologia modificata correttamente');
     }
 
     /**

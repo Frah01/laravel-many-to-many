@@ -23,7 +23,6 @@
             @endif
         <div class="col">
             <div class="card my-3">
-                <div class="card-header">{{ __('User Projects') }}</div>
                 <div class="card-body p-0">
                     <table class="table table-striped mb-0">
                         <thead class="thead-dark">

@@ -7,6 +7,11 @@
                     <h2>Aggiungi nuova tecnologia</h2>
                 </div>
             </div>
+            @if(session('message'))
+            <div class="alert alert-success my-3" >
+                {{session('message')}}
+            </div>
+            @endif
             @if ($errors->any())
             <div class="alert alert-danger my-3" >
                 @foreach ($errors->all() as $error)

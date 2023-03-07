@@ -25,7 +25,7 @@
             <div class="card my-3">
                 <div class="card-header">{{ __('User Projects') }}</div>
                 <div class="card-body p-0">
-                    <table class="table mb-0">
+                    <table class="table table-striped mb-0">
                         <thead>
                           <tr>
                             <th scope="col">Id</th>
@@ -47,9 +47,9 @@
                               <td><p class="fw-semibold">{{$project->type ? $project->type->name : 'Senza Tipo'}}</p></td>
                               <td>  
                                     @forelse ($project->technologies as $technology)
-                                    <p class="fw-semibold">{{$technology->name}}</p>
+                                    <p class="m-0 fw-semibold">{{$technology->name}}</p>
                                     @empty
-                                    <p class="fw-semibold" >Nessuna Tecnologia</p>
+                                    <p class="m-0 fw-semibold" >Nessuna Tecnologia</p>
                                     @endforelse
                             </td>
                             
